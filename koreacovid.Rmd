@@ -16,17 +16,12 @@ require(lubridate)
 kRdata <- read.csv(file = 'kRdata.csv')
 ```
 
-### Data is from the Patient_Info dataset from South Korea 1 Jan to 1 May 
-### This is contained in a downloadable zip file from kaggle
-
-Some of the data was uncoded for sex - sex must be just male or female
-77 of the data entries were coded sex  as blank, so we omit these.
-state of a patient must be died or alive - we adjust that as well   
   
 # Introduction 
 
 Question 1 - Is dying independent of sex?
 
+Investigate whether men and women are equally likely to die of covid19 from data collected in south korea through May 2019.
 
 Table of patients:
 ```{r}
@@ -37,8 +32,11 @@ with(kRdata, table(Sex, result))
 
 ```
 
-Investigate whether men and women are equally likely to die of covid19 from data collected in south korea through May 2019
+Data is from the Patient_Info dataset from South Korea 1 Jan to 1 May.
 
+Some of the data was uncoded for sex - sex must be just male or female.
+77 of the data entries were coded sex  as blank, so we omit these.
+state of a patient must be died or alive - we adjust that as well.
 
 
 # Method
@@ -48,6 +46,7 @@ $H_0$: In South Korea through May 2019, death from covid19 is not affected from 
 
 $H_a$: In South Korea through May 2019, death from covid19 is affected from sex.
 
+Mortality (alive or dead) is a categorical variable. Sex (male or female) is also a categorical variable. We will use a CAT ~ CAT set of graphs to determine whether death from covid19 was impacted by sex in South Korea through May 2019. I will use a gg style bar chart, one showing frequency and one showing percent. I will also use a numerical findings chart showing percentages and observed counts. Finally I will use a chi-squared test and a fisher exact test.
 
 #Results
 
