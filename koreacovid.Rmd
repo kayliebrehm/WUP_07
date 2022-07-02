@@ -1,7 +1,7 @@
 ---
 title: "covid 19"
-author: "Dr K"
-date: "5/2/2020"
+author: "Kaylie Brehm"
+date: "Summer 2022"
 output:
   html_document: default
   pdf_document: default
@@ -15,6 +15,7 @@ require(tigerstats)
 require(lubridate)
 kRdata <- read.csv(file = 'kRdata.csv')
 ```
+
 ### Data is from the Patient_Info dataset from South Korea 1 Jan to 1 May 
 ### This is contained in a downloadable zip file from kaggle
 
@@ -22,9 +23,9 @@ Some of the data was uncoded for sex - sex must be just male or female
 77 of the data entries were coded sex  as blank, so we omit these.
 state of a patient must be died or alive - we adjust that as well   
   
-# Question 1 - Is dying independent of sex
+# Introduction 
 
-
+Question 1 - Is dying independent of sex?
 
 
 Table of patients:
@@ -36,24 +37,57 @@ with(kRdata, table(Sex, result))
 
 ```
 
-## We create two bar charts - one based on frequency and the other on percent, use ggplot commands to do this
+Investigate whether men and women are equally likely to die of covid19 from data collected in south korea through May 2019
 
-`
+
+
+# Method
+
+
+$H_0$: In South Korea through May 2019, death from covid19 is not affected from sex.
+
+$H_a$: In South Korea through May 2019, death from covid19 is affected from sex.
+
+
+#Results
+
+## Graphical Results
+
+We create two bar charts - one based on frequency and the other on percent, use ggplot commands to do this
+
+````{r}
+dd2 <- kRdata %>% group_by(result,Sex) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=result,y=count,fill=Sex))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=result,y=prcnt*100,fill=Sex)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
 
   
 
-
-
-
-
-  
 ## Numerical results
 
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
 
 ## Inferential results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 
-
-## Conclusions
+# Conclusions
 
