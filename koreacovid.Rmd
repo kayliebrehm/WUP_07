@@ -48,7 +48,7 @@ $H_a$: In South Korea through May 2019, death from covid19 is affected from sex.
 
 Mortality (alive or dead) is a categorical variable. Sex (male or female) is also a categorical variable. We will use a CAT ~ CAT set of graphs to determine whether death from covid19 was impacted by sex in South Korea through May 2019. I will use a gg style bar chart, one showing frequency and one showing percent. I will also use a numerical findings chart showing percentages and observed counts. Finally I will use a chi-squared test and a fisher exact test.
 
-#Results
+# Results
 
 ## Graphical Results
 
