@@ -94,8 +94,12 @@ fisher.test(table1)
 ```
 
 
-The chi sq test provides the exact numbers. It shows that there were 1831 alive females and 1411 alive males. 25 women died vs 44 males died. The odds of a female dying is (25/1831). The odds of a male dying is (44/1411). The odds ratio of a male dying to a female is (44/1411)/(25/1831). The odds ratio is 2.3 to 1, meaning men are 2.3 times more likely to die. We also see the confidence intervals are, on the low end 1.4 and 3.9 on the high end.
+The chi sq test provides the exact numbers. It shows that there were 1831 alive females and 1411 alive males. 25 women died vs 44 males died. The odds of a female dying is (25/1831). The odds of a male dying is (44/1411). The odds ratio of a male dying to a female is (44/1411)/(25/1831). The odds ratio is 2.3 to 1, meaning men are 2.3 times more likely to die. We also see the confidence intervals are, on the low end 1.4 and 3.9 on the high end. The chi-square test shows a p-value of 0.0012. The fisher test shows a p-value of 0.0000000004. Since these are both under 0.05, we reject the null hypothesis.
 
 
 # Conclusions
+
+
+We investigated whether men and women are equally likely to die of covid19 from data collected in
+South Korea through May 2019. The null hypothesis was "In South Korea through May 2019, death from covid19 is not affected from sex." The numerical summary showed that out of the population of people who were dead, 64% of them were males while only 36% of them were females. When looking at the Fisher's Exact Test, we can see that the odds ratio of dying is 2.3 to 1 if you are a male. Finally, since the p-value is under 0.05, at 0.0000000004, we reject the null hypothesis. I can conclude that there is a correlation between sex and dying. 
 
