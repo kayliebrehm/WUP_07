@@ -70,7 +70,7 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 
-The data shows that the percentage of females who are alive is more than the percentage of males that are alive. As for the dead, it shows that the percentage of males that are dead is about twice as higher as the percentage of females that are dead. 
+The data shows that more women are alive than men. However, the percentage of females who are alive is more than the percentage of males that are alive. As for the dead, it shows that the percentage of males that are dead is about twice as higher as the percentage of females that are dead. 
 
 
 ## Numerical results
@@ -81,6 +81,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+
+Out of the total population of people who are alive, 56% of them are females while 44% of them are males. Out of the total population of people who are dead, 36% of them are females while 64% of them are males.
 
 
 ## Inferential results 
