@@ -69,7 +69,9 @@ basicCC <- ggplot(dd2,aes(x=result,y=prcnt*100,fill=Sex))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-  
+
+The data shows that the percentage of females who are alive is more than the percentage of males that are alive. As for the dead, it shows that the percentage of males that are dead is about twice as higher as the percentage of females that are dead. 
+
 
 ## Numerical results
 
@@ -78,6 +80,8 @@ table1 <- xtabs(~result + Sex, data=kRdata)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+
 
 ## Inferential results 
 
